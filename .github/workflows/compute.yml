@@ -12,8 +12,6 @@ permissions:
   issues: write
   id-token: write
 
-env:
-
 jobs:
   init_and_plan:
     name: Terraform Init and Plan
