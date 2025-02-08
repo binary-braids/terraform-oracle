@@ -89,7 +89,7 @@ jobs:
           secret: ${{ github.TOKEN }}
           approvers: data-tangles
           minimum-approvals: 1
-          issue-title: "Terraform Apply"
+          issue-title: "Terraform Apply - ${{ github.workflow }}"
           issue-body: "Please approve or deny the Terraform Apply operation"
           exclude-workflow-initiator-as-approver: false
 
