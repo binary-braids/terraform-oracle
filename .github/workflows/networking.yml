@@ -46,8 +46,8 @@ jobs:
           
       - name: 'Fix OCI Config File Permissions'
         run: |
-          oci setup repair-file-permissions --file /home/runner/.oci/config
-          oci setup repair-file-permissions --file /home/runner/.oci/key.pem
+          oci setup repair-file-permissions --file ~/.oci/config
+          oci setup repair-file-permissions --file ~/.oci/key.pem
 
       - name: Map Secrets to Environment Variables 🗺️ 
         uses: oNaiPs/secrets-to-env-action@ec46a22bfc9b37e014b627b3208b07eb8909ea0f # v1.5
@@ -122,8 +122,8 @@ jobs:
         
       - name: 'Fix OCI Config File Permissions'
         run: |
-          oci setup repair-file-permissions --file /home/runner/.oci/config
-          oci setup repair-file-permissions --file /home/runner/.oci/key.pem
+          oci setup repair-file-permissions --file ~/.oci/config
+          oci setup repair-file-permissions --file ~/.oci/key.pem
 
       - name: Restore Terraform Plan 🗺️
         uses: actions/cache/restore@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
