@@ -43,14 +43,14 @@ variable "shape" {
   description = "Shape for Core Instance"
 }
 
-variable "instance_display_name" {
+variable "docker_instance_display_name" {
   type        = string
-  description = "Shape for Core Instance"
+  description = "Name for Docker Core Instance"
 }
 
 variable "mgmt_instance_display_name" {
   type        = string
-  description = "Shape for Management Core Instance"
+  description = "Name for Management Core Instance"
 }
 
 variable "subnet_id" {
