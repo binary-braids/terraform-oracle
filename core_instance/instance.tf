@@ -4,13 +4,13 @@ resource "oci_core_instance" "linux_instance" {
   availability_domain = var.availability_domain
   compartment_id      = var.compartment_id
   shape               = var.shape
-  display_name        = var.instance_display_name
+  display_name        = var.docker_instance_display_name
   freeform_tags       = merge(local.docker_tags)
 
   create_vnic_details {
     subnet_id        = var.subnet_id
     private_ip       = var.docker_private_ip
-    display_name     = "${var.instance_display_name}-nic"
+    display_name     = "${var.docker_instance_display_name}-nic"
     assign_public_ip = true
     freeform_tags    = merge(local.docker_tags)
 
