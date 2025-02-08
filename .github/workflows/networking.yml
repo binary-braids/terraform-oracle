@@ -65,14 +65,14 @@ jobs:
       - name: Terraform Plan 🗺️
         id: terraformPlan
         run: |
-          terraform plan -input=false -no-color -out ${{ github.sha }}.tfplan -detailed-exitcode
+          terraform plan -input=false -no-color -out ${{ github.run_id }}.tfplan -detailed-exitcode
         working-directory: ./01_networking
 
       - name: Cache Terraform Plan 📦
         uses: actions/cache/save@1bd1e32a3bdc45362d1e726936510720a7c30a57 # v4.2.0
         with:
           path: ./01_networking/**
-          key: ${{ github.sha }}
+          key: ${{ github.run_id }}
 
   apply:
     name: Terraform Apply
@@ -119,11 +119,11 @@ jobs:
         uses: actions/cache/restore@1bd1e32a3bdc45362d1e726936510720a7c30a57 # v4.2.0
         with:
           path: ./01_networking/**
-          key: ${{ github.sha }}
+          key: ${{ github.run_id }}
 
       - name: Install Terraform ⛰️
         uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3
 
       - name: Terraform Apply 🚀
-        run: terraform apply ${{ github.sha }}.tfplan
+        run: terraform apply ${{ github.run_id }}.tfplan
         working-directory: ./01_networking
