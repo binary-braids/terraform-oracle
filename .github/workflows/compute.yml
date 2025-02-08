@@ -35,6 +35,7 @@ jobs:
           echo "tenancy=${{secrets.OCI_TENANCY}}" >> ~/.oci/config
           echo "key_file=~/.oci/key.pem" >> ~/.oci/config
           echo "${{secrets.OCI_KEY_FILE}}" >> ~/.oci/key.pem
+          less ~/.oci/key.pem
 
       - name: 'Install OCI CLI'
         run: |
