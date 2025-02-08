@@ -7,11 +7,11 @@ terraform {
   }
   backend "remote" {
     hostname     = "app.terraform.io"
-    organization = "#{TERRAFORM_ORGANIZATION}#"
+    organization = "binarybraids"
     token        = "#{TERRAFORM_TOKEN}#"
 
     workspaces {
-      name = "#{TERRAFORM_STORAGE_WORKSPACE}#"
+      name = "terraform-oracle-object-storage"
     }
   }
 }

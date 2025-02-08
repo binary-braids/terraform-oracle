@@ -11,11 +11,11 @@ terraform {
   }
   backend "remote" {
     hostname     = "app.terraform.io"
-    organization = "#{TERRAFORM_ORGANIZATION}#"
+    organization = "binarybraids"
     token        = "#{TERRAFORM_TOKEN}#"
 
     workspaces {
-      name = "#{TERRAFORM_NETWORKING_WORKSPACE}#"
+      name = "terraform-oracle-networking"
     }
   }
 }
