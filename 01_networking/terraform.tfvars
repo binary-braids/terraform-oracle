@@ -1,8 +1,3 @@
-provider_tenancy_ocid         = "#{PROVIDER_TENANCY_OCID}#"
-provider_user_ocid            = "#{PROVIDER_USER_OCID}#"
-provider_fingerprint          = "#{PROVIDER_FINGERPRINT}#"
-provider_private_key_path     = "./keys/provider_key.pk"
-provider_region               = "uksouth"
 tag_environment               = "Production"
 compartment_id                = "#{COMPARTMENT_ID}#"
 vcn_cidr_blocks               = [ "192.168.1.0/24" ]

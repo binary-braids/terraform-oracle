@@ -1,8 +1,3 @@
-provider_tenancy_ocid               = "#{PROVIDER_TENANCY_OCID}#"
-provider_user_ocid                  = "#{PROVIDER_USER_OCID}#"
-provider_fingerprint                = "#{PROVIDER_FINGERPRINT}#"
-provider_private_key_path           = "./keys/provider_key.pk"
-provider_region                     = "uksouth"
 tag_environment                     = "Production"
 compartment_id                      = "#{COMPARTMENT_ID}#"
 availability_domain                 = "AD-2"
