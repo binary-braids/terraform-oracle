@@ -65,14 +65,14 @@ jobs:
       - name: Terraform Plan 🗺️
         id: terraformPlan
         run: |
-          terraform plan -input=false -no-color -out ${{ github.sha }}.tfplan -detailed-exitcode
+          terraform plan -input=false -no-color -out ${{ github.run_id }}.tfplan -detailed-exitcode
         working-directory: ./object_storage/
 
       - name: Cache Terraform Plan 📦
         uses: actions/cache/save@1bd1e32a3bdc45362d1e726936510720a7c30a57 # v4.2.0
         with:
           path: ./object_storage/**
-          key: ${{ github.sha }}
+          key: ${{ github.run_id }}
 
   apply:
     name: Terraform Apply
@@ -100,7 +100,7 @@ jobs:
         uses: actions/cache/restore@1bd1e32a3bdc45362d1e726936510720a7c30a57 # v4.2.0
         with:
           path: ./object_storage/**
-          key: ${{ github.sha }}
+          key: ${{ github.run_id }}
 
       - name: Write OCI Config & Key Files
         run: |
@@ -125,5 +125,5 @@ jobs:
         uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3
 
       - name: Terraform Apply 🚀
-        run: terraform apply ${{ github.sha }}.tfplan
+        run: terraform apply ${{ github.run_id }}.tfplan
         working-directory: ./object_storage
