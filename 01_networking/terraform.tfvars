@@ -1,6 +1,6 @@
 tag_environment               = "Production"
 compartment_id                = "#{COMPARTMENT_ID}#"
-vcn_cidr_blocks               = [ "192.168.1.0/24" ]
+vcn_cidr_blocks               = ["192.168.1.0/24"]
 vcn_display_name              = "vcn-prod-uk-01"
 internet_gateway_display_name = "ig-prod-uk-01"
 route_table_display_name      = "rt-prod-uk-01"
