@@ -3,7 +3,9 @@ name: Production Networking CI
 on:
   push:
     branches:
-      - "main"
+    - "main"
+    paths:
+    - "networking_instance/**/*"
   pull_request:
   workflow_dispatch:
     
