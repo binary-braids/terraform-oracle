@@ -5,10 +5,10 @@ on:
     branches:
     - "main"
     paths:
-    - "networking_instance/**/*"
+    - "01_networking/**/*"
   pull_request:
     paths:
-    - "networking_instance/**/*"
+    - "01_networking/**/*"
   workflow_dispatch:
     
 permissions:
