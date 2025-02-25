@@ -97,6 +97,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_availability_domain"></a> [availability\_domain](#input\_availability\_domain) | Availability Domain for Core Instance | `string` | n/a | yes |
+| <a name="input_backend_token"></a> [backend\_token](#input\_backend\_token) | Token for Terraform Cloud | `string` | n/a | yes |
 | <a name="input_compartment_id"></a> [compartment\_id](#input\_compartment\_id) | Compartment ID for Oracle Tenant | `string` | n/a | yes |
 | <a name="input_docker_instance_display_name"></a> [docker\_instance\_display\_name](#input\_docker\_instance\_display\_name) | Name for Docker Core Instance | `string` | n/a | yes |
 | <a name="input_docker_private_ip"></a> [docker\_private\_ip](#input\_docker\_private\_ip) | Private IP for Docker instance | `string` | n/a | yes |

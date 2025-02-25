@@ -114,6 +114,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_backend_token"></a> [backend\_token](#input\_backend\_token) | Token for Terraform Cloud | `string` | n/a | yes |
 | <a name="input_compartment_id"></a> [compartment\_id](#input\_compartment\_id) | Compartment ID for Oracle Tenant | `string` | n/a | yes |
 | <a name="input_cpe_display_name"></a> [cpe\_display\_name](#input\_cpe\_display\_name) | Display name for the CPE | `string` | n/a | yes |
 | <a name="input_cpe_ip_address"></a> [cpe\_ip\_address](#input\_cpe\_ip\_address) | IP address of the CPE | `string` | n/a | yes |
