@@ -5,16 +5,20 @@ on:
     branches:
     - "main"
     paths:
-    - "networking_instance/**/*"
+    - "01_networking/**/*"
   pull_request:
     paths:
-    - "networking_instance/**/*"
+    - "01_networking/**/*"
   workflow_dispatch:
     
 permissions:
   contents: write
   issues: write
   id-token: write
+
+env:
+  SOPS_VERSION: 3.9.4
+  WORKING_DIRECTORY: "./01_networking"
 
 jobs:
   init_and_plan:
@@ -48,34 +52,34 @@ jobs:
           echo "/home/runner/bin" >> $GITHUB_PATH
           exec -l $SHELL
 
-      - name: Map Secrets to Environment Variables 🗺️ 
-        uses: oNaiPs/secrets-to-env-action@ec46a22bfc9b37e014b627b3208b07eb8909ea0f # v1.5
-        with:
-            secrets: ${{ toJSON(secrets) }}        
-
-      - name: Replace Tokens 🪙
-        uses: cschleiden/replace-tokens@4d5a042c84c3568b3858b7af9394923d2d5195c9 # v1.3
-        with:
-          files: '["./01_networking/**/*.*"]'
+      - name: Decrypt SOPS encrypted variables 🪙
+        run: |
+          curl -LO https://github.com/getsops/sops/releases/download/v${{ env.SOPS_VERSION }}/sops-v${{ env.SOPS_VERSION }}.linux.amd64
+          sudo mv sops-v${{ env.SOPS_VERSION }}.linux.amd64 /usr/local/bin/sops
+          chmod +x /usr/local/bin/sops
+          export SOPS_AGE_KEY=${{ secrets.SOPS_AGE_KEY }}
+          sops --decrypt ${{ env.WORKING_DIRECTORY }}/terraform.sops.tfvars > ${{ env.WORKING_DIRECTORY }}/terraform.tfvars
 
       - name: Install Terraform ⛰️
         uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3
+        with:
+          cli_config_credentials_token: ${{ secrets.TERRAFORM_TOKEN }}
 
       - name: Terraform Init 🏃
         id: terraformInit
         run: terraform init
-        working-directory: ./01_networking
+        working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Terraform Plan 🗺️
         id: terraformPlan
         run: |
           terraform plan -input=false -no-color -out ${{ github.run_id }}.tfplan -detailed-exitcode
-        working-directory: ./01_networking
+        working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Cache Terraform Plan 📦
         uses: actions/cache/save@0c907a75c2c80ebcb7f088228285e798b750cf8f # v4.2.1
         with:
-          path: ./01_networking/**
+          path: ${{ env.WORKING_DIRECTORY }}/**
           key: ${{ github.run_id }}
 
   apply:
@@ -123,12 +127,14 @@ jobs:
       - name: Restore Terraform Plan 🗺️
         uses: actions/cache/restore@0c907a75c2c80ebcb7f088228285e798b750cf8f # v4.2.1
         with:
-          path: ./01_networking/**
+          path: ${{ env.WORKING_DIRECTORY }}/**
           key: ${{ github.run_id }}
 
       - name: Install Terraform ⛰️
         uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3
+        with:
+          cli_config_credentials_token: ${{ secrets.TERRAFORM_TOKEN }}
 
       - name: Terraform Apply 🚀
         run: terraform apply ${{ github.run_id }}.tfplan
-        working-directory: ./01_networking
+        working-directory: ${{ env.WORKING_DIRECTORY }}

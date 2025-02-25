@@ -5,6 +5,7 @@ variable "tag_environment" {
 
 variable "compartment_id" {
   type        = string
+  sensitive   = true
   description = "Compartment ID for Oracle Tenant"
 }
 
