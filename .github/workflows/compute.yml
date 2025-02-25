@@ -3,7 +3,9 @@ name: Production Compute CI
 on:
   push:
     branches:
-      - "main"
+    - "main"
+    paths:
+    - "core_instance/**/*"
   pull_request:
   workflow_dispatch:
     

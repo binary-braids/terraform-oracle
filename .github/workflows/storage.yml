@@ -3,7 +3,9 @@ name: Production Storage CI
 on:
   push:
     branches:
-      - "main"
+    - "main"
+    paths:
+    - "object_storage/**/*"
   pull_request:
   workflow_dispatch:
     
