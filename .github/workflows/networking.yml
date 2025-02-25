@@ -19,7 +19,6 @@ permissions:
 env:
   SOPS_VERSION: 3.9.4
   WORKING_DIRECTORY: "./01_networking"
-  TF_API_TOKEN: ${{ secrets.TERRAFORM_TOKEN }}
 
 jobs:
   init_and_plan:
@@ -63,6 +62,8 @@ jobs:
 
       - name: Install Terraform ⛰️
         uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3
+        with:
+          cli_config_credentials_token: ${{ secrets.TERRAFORM_TOKEN }}
 
       - name: Terraform Init 🏃
         id: terraformInit
@@ -131,6 +132,8 @@ jobs:
 
       - name: Install Terraform ⛰️
         uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3
+        with:
+          cli_config_credentials_token: ${{ secrets.TERRAFORM_TOKEN }}
 
       - name: Terraform Apply 🚀
         run: terraform apply ${{ github.run_id }}.tfplan
