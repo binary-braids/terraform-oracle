@@ -8,7 +8,6 @@ terraform {
   backend "remote" {
     hostname     = "app.terraform.io"
     organization = "binarybraids"
-    token        = "#{TERRAFORM_TOKEN}#"
 
     workspaces {
       name = "terraform-oracle-object-storage"

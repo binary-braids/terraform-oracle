@@ -5,6 +5,7 @@ variable "tag_environment" {
 
 variable "compartment_id" {
   type        = string
+  sensitive   = true
   description = "Compartment ID for Oracle Tenant"
 }
 
@@ -60,11 +61,13 @@ variable "ipsec_connection_display_name" {
 
 variable "ipsec_secret_tunnel_1" {
   type        = string
+  sensitive   = true
   description = "Secret for 1st IPSec tunnel"
 }
 
 variable "ipsec_secret_tunnel_2" {
   type        = string
+  sensitive   = true
   description = "Secret for 2nd IPsec tunnel"
 }
 
