@@ -7,6 +7,8 @@ on:
     paths:
     - "core_instance/**/*"
   pull_request:
+    paths:
+    - "core_instance/**/*"
   workflow_dispatch:
     
 permissions:

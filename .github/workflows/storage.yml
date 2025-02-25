@@ -7,6 +7,8 @@ on:
     paths:
     - "object_storage/**/*"
   pull_request:
+    paths:
+    - "object_storage/**/*"
   workflow_dispatch:
     
 permissions:

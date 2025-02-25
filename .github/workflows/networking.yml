@@ -7,6 +7,8 @@ on:
     paths:
     - "networking_instance/**/*"
   pull_request:
+    paths:
+    - "networking_instance/**/*"
   workflow_dispatch:
     
 permissions:
