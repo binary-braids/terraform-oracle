@@ -1,4 +1,8 @@
-# 0.1.0 (2025-02-25)
+## [0.1.1](https://github.com/binary-braids/terraform-oracle/compare/v0.1.0...v0.1.1) (2025-02-25)
+
+
+
+# [0.1.0](https://github.com/binary-braids/terraform-oracle/compare/471a68e5e8e086fa7b514568b8f0987b646aefba...v0.1.0) (2025-02-25)
 
 
 ### Bug Fixes
