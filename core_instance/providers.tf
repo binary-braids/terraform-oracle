@@ -8,6 +8,7 @@ terraform {
   backend "remote" {
     hostname     = "app.terraform.io"
     organization = "binarybraids"
+    token        = var.backend_token
 
     workspaces {
       name = "terraform-oracle-core-instance"

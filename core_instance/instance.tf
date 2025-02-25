@@ -22,7 +22,7 @@ resource "oci_core_instance" "linux_instance" {
   }
 
   metadata = {
-    ssh_authorized_keys = file("./keys/oci_instance_key.pub")
+    ssh_authorized_keys = file(var.ssh_public_key)
   }
 }
 

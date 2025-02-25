@@ -1,3 +1,9 @@
+variable "backend_token" {
+  type        = string
+  sensitive   = true
+  description = "Token for Terraform Cloud"
+}
+
 variable "tag_environment" {
   type        = string
   description = "Tag Value for Environment"

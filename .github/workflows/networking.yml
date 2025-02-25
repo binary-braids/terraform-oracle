@@ -19,7 +19,6 @@ permissions:
 env:
   SOPS_VERSION: 3.9.4
   WORKING_DIRECTORY: "./01_networking"
-  TFE_TOKEN: ${{ secrets.TFE_TOKEN }}
 
 jobs:
   init_and_plan:
