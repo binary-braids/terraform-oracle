@@ -19,7 +19,7 @@ permissions:
 env:
   SOPS_VERSION: 3.9.4
   WORKING_DIRECTORY: "./core_instance"
-  TF_TOKEN_app_terraform_io: ${{ secrets.TERRAFORM_TOKEN }}
+  TF_API_TOKEN: ${{ secrets.TERRAFORM_TOKEN }}
 
 jobs:
   init_and_plan:
