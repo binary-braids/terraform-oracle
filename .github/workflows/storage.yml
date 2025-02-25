@@ -85,6 +85,7 @@ jobs:
 
       - name: Manual Approval 🚦
         uses: trstringer/manual-approval@662b3ddbc7685f897992051e87e1b4b58c07dc03 # v1
+        timeout-minutes: 5
         with:
           secret: ${{ github.TOKEN }}
           approvers: data-tangles
