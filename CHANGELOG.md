@@ -1,3 +1,7 @@
+## [0.1.988](https://github.com/binary-braids/terraform-oracle/compare/v0.1.987...v0.1.988) (2025-02-26)
+
+
+
 ## [0.1.987](https://github.com/binary-braids/terraform-oracle/compare/v0.1.986...v0.1.987) (2025-02-26)
 
 
@@ -31,10 +35,6 @@
 
 
 ## [0.1.979](https://github.com/binary-braids/terraform-oracle/compare/v0.1.978...v0.1.979) (2025-02-26)
-
-
-
-## [0.1.978](https://github.com/binary-braids/terraform-oracle/compare/v0.1.977...v0.1.978) (2025-02-26)
 
 
 
