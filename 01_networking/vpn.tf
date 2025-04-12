@@ -31,20 +31,3 @@ resource "oci_core_ipsec_connection_tunnel_management" "oci_ipsec_tunnel_1" {
   shared_secret = var.ipsec_secret_tunnel_1
 }
 
-resource "null_resource" "wait" {
-  depends_on = [oci_core_ipsec_connection_tunnel_management.oci_ipsec_tunnel_1]
-  provisioner "local-exec" {
-    command = "echo 'Wait between the configuration of the 2 tunnels'; sleep 20"
-  }
-}
-
-resource "oci_core_ipsec_connection_tunnel_management" "oci_ipsec_tunnel_2" {
-  depends_on    = [null_resource.wait]
-  ipsec_id      = oci_core_ipsec.oci_ipsec_connection.id
-  display_name  = "oci-ipsec-tunnel-02"
-  tunnel_id     = data.oci_core_ipsec_connection_tunnels.oci_ipsec_connection_tunnels.ip_sec_connection_tunnels[1].id
-  routing       = "STATIC"
-  ike_version   = "V1"
-  shared_secret = var.ipsec_secret_tunnel_2
-}
-
