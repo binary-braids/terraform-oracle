@@ -65,12 +65,6 @@ variable "ipsec_secret_tunnel_1" {
   description = "Secret for 1st IPSec tunnel"
 }
 
-variable "ipsec_secret_tunnel_2" {
-  type        = string
-  sensitive   = true
-  description = "Secret for 2nd IPsec tunnel"
-}
-
 variable "vm_subnet_cidr_block" {
   type        = string
   description = "CIDR formatted block for VM subnet"
