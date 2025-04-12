@@ -1,4 +1,13 @@
-# 0.2.0 (2025-04-12)
+# [0.3.0](https://github.com/binary-braids/terraform-oracle/compare/v0.2.0...v0.3.0) (2025-04-12)
+
+
+### Features
+
+* add support for second IPSec tunnel with wait resource ([d98dc60](https://github.com/binary-braids/terraform-oracle/commit/d98dc60955cb8e0a6684053a191b5b96a7db9118))
+
+
+
+# [0.2.0](https://github.com/binary-braids/terraform-oracle/compare/471a68e5e8e086fa7b514568b8f0987b646aefba...v0.2.0) (2025-04-12)
 
 
 ### Bug Fixes
