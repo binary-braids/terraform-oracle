@@ -99,6 +99,27 @@ variable "k3s_image_source_id" {
   description = "Image Source for k3s"
 }
 
+# Load Balancer Variables
+variable "nlb_name" {
+  type        = string
+  description = "Name for the Network Load Balancer"
+}
+
+variable "kubernetes_lb_api_port" {
+  type        = number
+  description = "Port for Kubernetes API Load Balancer"
+}
+
+variable "kubernetes_lb_http_port" {
+  type        = number
+  description = "Port for Kubernetes HTTP Load Balancer"
+}
+
+variable "kubernetes_lb_https_port" {
+  type        = number
+  description = "Port for Kubernetes HTTPS Load Balancer"
+}
+
 
 
 
