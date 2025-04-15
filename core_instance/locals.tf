@@ -16,5 +16,11 @@ locals {
     purpose     = "k3s Node"
     createdby   = "Terraform"
   }
+
+  lb_tags = {
+    environment = var.tag_environment
+    purpose     = "Load Balancer"
+    createdby   = "Terraform"
+  }
 }
 
