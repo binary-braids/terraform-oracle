@@ -1,3 +1,12 @@
+# [0.4.0](https://github.com/binary-braids/terraform-oracle/compare/v0.3.0...v0.4.0) (2025-04-15)
+
+
+### Features
+
+* add Network Load Balancer resources and related variables ([3fb7624](https://github.com/binary-braids/terraform-oracle/commit/3fb76245f97302f04324f5fd2b8a824d49ce8b14))
+
+
+
 # [0.3.0](https://github.com/binary-braids/terraform-oracle/compare/v0.2.0...v0.3.0) (2025-04-12)
 
 
