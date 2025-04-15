@@ -1,3 +1,12 @@
+## [0.5.1](https://github.com/binary-braids/terraform-oracle/compare/v0.5.0...v0.5.1) (2025-04-15)
+
+
+### Bug Fixes
+
+* update subnet_id reference to use correct output value ([f30cf03](https://github.com/binary-braids/terraform-oracle/commit/f30cf03e803760fc4078b0a01f0a09c41f2eb16f))
+
+
+
 # [0.5.0](https://github.com/binary-braids/terraform-oracle/compare/v0.4.0...v0.5.0) (2025-04-15)
 
 
