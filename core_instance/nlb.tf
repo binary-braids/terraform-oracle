@@ -1,7 +1,7 @@
 resource "oci_network_load_balancer_network_load_balancer" "nlb" {
   compartment_id = var.compartment_id
   display_name   = var.nlb_name
-  subnet_id      = data.tfe_outputs.networking.outputs.vm_subnet_id.value
+  subnet_id      = data.tfe_outputs.networking.values.vm_subnet_id
 
   is_private                     = true
   is_preserve_source_destination = false
