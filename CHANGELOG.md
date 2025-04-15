@@ -1,3 +1,12 @@
+# [0.5.0](https://github.com/binary-braids/terraform-oracle/compare/v0.4.0...v0.5.0) (2025-04-15)
+
+
+### Features
+
+* update subnet_id reference and add TFE outputs for networking ([72bdb07](https://github.com/binary-braids/terraform-oracle/commit/72bdb07dce24d178adaff6ac0297a185e122cc11))
+
+
+
 # [0.4.0](https://github.com/binary-braids/terraform-oracle/compare/v0.3.0...v0.4.0) (2025-04-15)
 
 
