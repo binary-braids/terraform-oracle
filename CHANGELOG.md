@@ -1,3 +1,12 @@
+# [0.6.0](https://github.com/binary-braids/terraform-oracle/compare/v0.5.1...v0.6.0) (2025-04-19)
+
+
+### Features
+
+* add backend port variables for Kubernetes load balancers ([04a4015](https://github.com/binary-braids/terraform-oracle/commit/04a4015d6e361bcc4bc12f8c5ac9987571487d30))
+
+
+
 ## [0.5.1](https://github.com/binary-braids/terraform-oracle/compare/v0.5.0...v0.5.1) (2025-04-15)
 
 
