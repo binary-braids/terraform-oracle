@@ -83,7 +83,7 @@ resource "oci_network_load_balancer_backend" "kubernetes_http_backend_1" {
   backend_set_name         = oci_network_load_balancer_backend_set.kubernetes_http_backend_set.name
   network_load_balancer_id = oci_network_load_balancer_network_load_balancer.nlb.id
   name                     = "kubernetes_http_backend_1"
-  port                     = var.kubernetes_lb_http_port
+  port                     = var.kubernetes_lb_http_backend_port
   target_id                = oci_core_instance.linux_instance_k3s_1.id
 }
 
@@ -95,7 +95,7 @@ resource "oci_network_load_balancer_backend" "kubernetes_http_backend_2" {
   backend_set_name         = oci_network_load_balancer_backend_set.kubernetes_http_backend_set.name
   network_load_balancer_id = oci_network_load_balancer_network_load_balancer.nlb.id
   name                     = "kubernetes_http_backend_2"
-  port                     = var.kubernetes_lb_http_port
+  port                     = var.kubernetes_lb_http_backend_port
   target_id                = oci_core_instance.linux_instance_k3s_2.id
 }
 
@@ -128,7 +128,7 @@ resource "oci_network_load_balancer_backend" "kubernetes_https_backend_1" {
   backend_set_name         = oci_network_load_balancer_backend_set.kubernetes_https_backend_set.name
   network_load_balancer_id = oci_network_load_balancer_network_load_balancer.nlb.id
   name                     = "kubernetes_https_backend_1"
-  port                     = var.kubernetes_lb_https_port
+  port                     = var.kubernetes_lb_https_backend_port
   target_id                = oci_core_instance.linux_instance_k3s_1.id
 }
 
@@ -140,6 +140,6 @@ resource "oci_network_load_balancer_backend" "kubernetes_https_backend_2" {
   backend_set_name         = oci_network_load_balancer_backend_set.kubernetes_https_backend_set.name
   network_load_balancer_id = oci_network_load_balancer_network_load_balancer.nlb.id
   name                     = "kubernetes_https_backend_2"
-  port                     = var.kubernetes_lb_https_port
+  port                     = var.kubernetes_lb_https_backend_port
   target_id                = oci_core_instance.linux_instance_k3s_2.id
 }

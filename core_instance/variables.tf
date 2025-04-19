@@ -115,9 +115,19 @@ variable "kubernetes_lb_http_port" {
   description = "Port for Kubernetes HTTP Load Balancer"
 }
 
+variable "kubernetes_lb_http_backend_port" {
+  type        = number
+  description = "Port for Kubernetes HTTP Backend"
+}
+
 variable "kubernetes_lb_https_port" {
   type        = number
   description = "Port for Kubernetes HTTPS Load Balancer"
+}
+
+variable "kubernetes_lb_https_backend_port" {
+  type        = number
+  description = "Port for Kubernetes HTTPS Backend"
 }
 
 
