@@ -58,7 +58,7 @@ resource "oci_network_load_balancer_backend" "kubernetes_api_backend_2" {
 resource "oci_network_load_balancer_backend_set" "kubernetes_http_backend_set" {
   health_checker {
     protocol = "TCP"
-    port     = var.kubernetes_lb_http_port
+    port     = var.kubernetes_lb_http_backend_port
   }
 
   name                     = "kubernetes_http_backend"
@@ -103,7 +103,7 @@ resource "oci_network_load_balancer_backend" "kubernetes_http_backend_2" {
 resource "oci_network_load_balancer_backend_set" "kubernetes_https_backend_set" {
   health_checker {
     protocol = "TCP"
-    port     = var.kubernetes_lb_https_port
+    port     = var.kubernetes_lb_https_backend_port
   }
 
   name                     = "kubernetes_https_backend"
