@@ -1,3 +1,12 @@
+## [0.6.1](https://github.com/binary-braids/terraform-oracle/compare/v0.6.0...v0.6.1) (2025-04-19)
+
+
+### Bug Fixes
+
+* update health checker ports for HTTP and HTTPS backend sets ([9e15b3f](https://github.com/binary-braids/terraform-oracle/commit/9e15b3ff1143603f7f3e029c72cfb3efbc83057f))
+
+
+
 # [0.6.0](https://github.com/binary-braids/terraform-oracle/compare/v0.5.1...v0.6.0) (2025-04-19)
 
 
