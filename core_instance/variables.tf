@@ -109,6 +109,11 @@ variable "k3s_image_source_id" {
   description = "Image Source for k3s"
 }
 
+variable "k3s_3_image_source_id" {
+  type        = string
+  description = "Image Source for k3s instance 3"
+}
+
 # Load Balancer Variables
 variable "nlb_name" {
   type        = string
