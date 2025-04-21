@@ -1,3 +1,13 @@
+## [0.7.1](https://github.com/binary-braids/terraform-oracle/compare/v0.7.0...v0.7.1) (2025-04-21)
+
+
+### Bug Fixes
+
+* disable public IP assignment for management and k3s instances ([9feb97a](https://github.com/binary-braids/terraform-oracle/commit/9feb97a69d60918c76b559b0f73717f89626e38d))
+* standardize public IP lifetime value to uppercase "EPHEMERAL" ([4f9760d](https://github.com/binary-braids/terraform-oracle/commit/4f9760d1113ae8c67ff904eea15012146f463941))
+
+
+
 # [0.7.0](https://github.com/binary-braids/terraform-oracle/compare/v0.6.2...v0.7.0) (2025-04-21)
 
 
