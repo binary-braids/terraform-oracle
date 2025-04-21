@@ -73,7 +73,7 @@ jobs:
       - name: Terraform Plan 🗺️
         id: terraformPlan
         run: |
-          terraform plan -input=false -no-color -out ${{ github.run_id }}.tfplan -detailed-exitcode
+          terraform plan -input=false -out ${{ github.run_id }}.tfplan -detailed-exitcode
         working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Cache Terraform Plan 📦
