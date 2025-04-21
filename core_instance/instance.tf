@@ -25,11 +25,11 @@ resource "oci_core_instance" "linux_management_instance" {
 }
 
 resource "oci_core_public_ip" "management_node_public_ip" {
-    compartment_id = var.compartment_id
+    compartment_id = oci_core_instance.linux_management_instance.private_ip.compartment_id
     lifetime = "Ephemeral"
     display_name = "pip-${var.mgmt_instance_display_name}"
     freeform_tags = merge(local.mgmt_tags)
-    private_ip_id = oci_core_private_ip.management_node_private_ip.id
+    private_ip_id = oci_core_instance.linux_management_instance.private_ip.id
 }
 
 # k3s Node 1
@@ -64,7 +64,7 @@ resource "oci_core_instance" "linux_instance_k3s_1" {
 }
 
 resource "oci_core_public_ip" "linux_instance_k3s_1_public_ip" {
-    compartment_id = var.compartment_id
+    compartment_id = oci_core_instance.linux_instance_k3s_1.private_ip.compartment_id
     lifetime = "Ephemeral"
     display_name = "pip-${var.k3s_1_instance_display_name}"
     freeform_tags = merge(local.mgmt_tags)
@@ -103,7 +103,7 @@ resource "oci_core_instance" "linux_instance_k3s_2" {
 }
 
 resource "oci_core_public_ip" "linux_instance_k3s_2_public_ip" {
-    compartment_id = var.compartment_id
+    compartment_id = oci_core_instance.linux_instance_k3s_2.private_ip.compartment_id
     lifetime = "Ephemeral"
     display_name = "pip-${var.k3s_2_instance_display_name}"
     freeform_tags = merge(local.mgmt_tags)
@@ -142,7 +142,7 @@ resource "oci_core_instance" "linux_instance_k3s_3" {
 }
 
 resource "oci_core_public_ip" "linux_instance_k3s_3_public_ip" {
-    compartment_id = var.compartment_id
+    compartment_id = oci_core_instance.linux_instance_k3s_3.private_ip.compartment_id
     lifetime = "Ephemeral"
     display_name = "pip-${var.k3s_3_instance_display_name}"
     freeform_tags = merge(local.mgmt_tags)
