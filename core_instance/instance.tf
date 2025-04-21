@@ -30,11 +30,15 @@ resource "oci_core_public_ip" "management_node_public_ip" {
   display_name   = "pip-${var.mgmt_instance_display_name}"
   freeform_tags  = merge(local.mgmt_tags)
   private_ip_id  = data.oci_core_private_ips.linux_management_instance_private_ips.id
+
+  depends_on = [
+    oci_core_instance.linux_management_instance
+  ]
 }
 
 # k3s Node 1
 resource "oci_core_instance" "linux_instance_k3s_1" {
-  availability_domain = var.k3s_availability_domain
+  availability_domain = var.k3s_1_availability_domain
   compartment_id      = var.compartment_id
   shape               = var.k3s_shape
   display_name        = var.k3s_1_instance_display_name
@@ -69,11 +73,15 @@ resource "oci_core_public_ip" "linux_instance_k3s_1_public_ip" {
   display_name   = "pip-${var.k3s_1_instance_display_name}"
   freeform_tags  = merge(local.mgmt_tags)
   private_ip_id  = data.oci_core_private_ips.linux_instance_k3s_1_private_ips.id
+
+  depends_on = [
+    oci_core_instance.linux_instance_k3s_1
+  ]
 }
 
 # k3s Node 2
 resource "oci_core_instance" "linux_instance_k3s_2" {
-  availability_domain = var.k3s_availability_domain
+  availability_domain = var.k3s_2_availability_domain
   compartment_id      = var.compartment_id
   shape               = var.k3s_shape
   display_name        = var.k3s_2_instance_display_name
@@ -108,11 +116,15 @@ resource "oci_core_public_ip" "linux_instance_k3s_2_public_ip" {
   display_name   = "pip-${var.k3s_2_instance_display_name}"
   freeform_tags  = merge(local.mgmt_tags)
   private_ip_id  = data.oci_core_private_ips.linux_instance_k3s_2_private_ips.id
+
+  depends_on = [
+    oci_core_instance.linux_instance_k3s_2
+  ]
 }
 
 # k3s Node 3
 resource "oci_core_instance" "linux_instance_k3s_3" {
-  availability_domain = var.k3s_availability_domain
+  availability_domain = var.k3s_3_availability_domain
   compartment_id      = var.compartment_id
   shape               = var.k3s_shape
   display_name        = var.k3s_3_instance_display_name
@@ -147,4 +159,8 @@ resource "oci_core_public_ip" "linux_instance_k3s_3_public_ip" {
   display_name   = "pip-${var.k3s_3_instance_display_name}"
   freeform_tags  = merge(local.mgmt_tags)
   private_ip_id  = data.oci_core_private_ips.linux_instance_k3s_3_private_ips.id
+
+  depends_on = [
+    oci_core_instance.linux_instance_k3s_3
+  ]
 }
