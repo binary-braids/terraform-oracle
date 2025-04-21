@@ -38,7 +38,7 @@ resource "oci_core_public_ip" "management_node_public_ip" {
 
 # k3s Node 1
 resource "oci_core_instance" "linux_instance_k3s_1" {
-  availability_domain = var.k3s_availability_domain
+  availability_domain = var.k3s_1_availability_domain
   compartment_id      = var.compartment_id
   shape               = var.k3s_shape
   display_name        = var.k3s_1_instance_display_name
@@ -81,7 +81,7 @@ resource "oci_core_public_ip" "linux_instance_k3s_1_public_ip" {
 
 # k3s Node 2
 resource "oci_core_instance" "linux_instance_k3s_2" {
-  availability_domain = var.k3s_availability_domain
+  availability_domain = var.k3s_2_availability_domain
   compartment_id      = var.compartment_id
   shape               = var.k3s_shape
   display_name        = var.k3s_2_instance_display_name
@@ -124,7 +124,7 @@ resource "oci_core_public_ip" "linux_instance_k3s_2_public_ip" {
 
 # k3s Node 3
 resource "oci_core_instance" "linux_instance_k3s_3" {
-  availability_domain = var.k3s_availability_domain
+  availability_domain = var.k3s_3_availability_domain
   compartment_id      = var.compartment_id
   shape               = var.k3s_shape
   display_name        = var.k3s_3_instance_display_name

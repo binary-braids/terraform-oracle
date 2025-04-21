@@ -44,7 +44,17 @@ variable "k3s_shape" {
   description = "Shape of the k3s Core Instance"
 }
 
-variable "k3s_availability_domain" {
+variable "k3s_1_availability_domain" {
+  type        = string
+  description = "Availability Domain for the k3s Core Instance"
+}
+
+variable "k3s_2_availability_domain" {
+  type        = string
+  description = "Availability Domain for the k3s Core Instance"
+}
+
+variable "k3s_3_availability_domain" {
   type        = string
   description = "Availability Domain for the k3s Core Instance"
 }
