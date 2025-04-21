@@ -24,23 +24,6 @@ resource "oci_core_instance" "linux_management_instance" {
   }
 }
 
-data "oci_core_vnic_attachments" "linux_management_instance_vnic_attachment" {
-  compartment_id = var.compartment_id
-  instance_id    = oci_core_instance.linux_management_instance.id
-
-  depends_on = [
-    oci_core_instance.linux_management_instance
-  ]
-}
-
-data "oci_core_private_ips" "linux_management_instance_private_ips" {
-  vnic_id  = data.oci_core_vnic_attachments.linux_management_instance_vnic_attachment.vnic_id
-
-  depends_on = [
-    oci_core_instance.linux_management_instance
-  ]
-}
-
 resource "oci_core_public_ip" "management_node_public_ip" {
   compartment_id = oci_core_instance.linux_management_instance.compartment_id
   lifetime       = "Ephemeral"
@@ -78,23 +61,6 @@ resource "oci_core_instance" "linux_instance_k3s_1" {
   metadata = {
     ssh_authorized_keys = file(var.ssh_public_key)
   }
-}
-
-data "oci_core_vnic_attachments" "linux_instance_k3s_1_vnic_attachment" {
-  compartment_id = var.compartment_id
-  instance_id    = oci_core_instance.linux_instance_k3s_1_instance.id
-
-  depends_on = [
-    oci_core_instance.linux_instance_k3s_1
-  ]
-}
-
-data "oci_core_private_ips" "linux_instance_k3s_1_private_ips" {
-  vnic_id  = data.oci_core_vnic_attachments.linux_instance_k3s_1_vnic_attachment.vnic_id
-
-  depends_on = [
-    oci_core_instance.linux_instance_k3s_1
-  ]
 }
 
 resource "oci_core_public_ip" "linux_instance_k3s_1_public_ip" {
@@ -136,23 +102,6 @@ resource "oci_core_instance" "linux_instance_k3s_2" {
   }
 }
 
-data "oci_core_vnic_attachments" "linux_instance_k3s_2_vnic_attachment" {
-  compartment_id = var.compartment_id
-  instance_id    = oci_core_instance.linux_instance_k3s_2_instance.id
-
-  depends_on = [
-    oci_core_instance.linux_instance_k3s_2
-  ]
-}
-
-data "oci_core_private_ips" "linux_instance_k3s_2_private_ips" {
-  vnic_id  = data.oci_core_vnic_attachments.linux_instance_k3s_2_vnic_attachment.vnic_id
-
-  depends_on = [
-    oci_core_instance.linux_instance_k3s_2
-  ]
-}
-
 resource "oci_core_public_ip" "linux_instance_k3s_2_public_ip" {
   compartment_id = oci_core_instance.linux_instance_k3s_2.compartment_id
   lifetime       = "Ephemeral"
@@ -190,23 +139,6 @@ resource "oci_core_instance" "linux_instance_k3s_3" {
   metadata = {
     ssh_authorized_keys = file(var.ssh_public_key)
   }
-}
-
-data "oci_core_vnic_attachments" "linux_instance_k3s_3_vnic_attachment" {
-  compartment_id = var.compartment_id
-  instance_id    = oci_core_instance.linux_instance_k3s_3_instance.id
-
-  depends_on = [
-    oci_core_instance.linux_instance_k3s_3
-  ]
-}
-
-data "oci_core_private_ips" "linux_instance_k3s_3_private_ips" {
-  vnic_id  = data.oci_core_vnic_attachments.linux_instance_k3s_3_vnic_attachment.vnic_id
-
-  depends_on = [
-    oci_core_instance.linux_instance_k3s_3
-  ]
 }
 
 resource "oci_core_public_ip" "linux_instance_k3s_3_public_ip" {
