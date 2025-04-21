@@ -1,3 +1,12 @@
+## [0.6.2](https://github.com/binary-braids/terraform-oracle/compare/v0.6.1...v0.6.2) (2025-04-21)
+
+
+### Bug Fixes
+
+* update encrypted data and metadata in terraform.sops.tfvars ([43df3ec](https://github.com/binary-braids/terraform-oracle/commit/43df3ec15e61d061fc267cc15eef6d1a2201821c))
+
+
+
 ## [0.6.1](https://github.com/binary-braids/terraform-oracle/compare/v0.6.0...v0.6.1) (2025-04-19)
 
 
