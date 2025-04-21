@@ -1,3 +1,12 @@
+# [0.8.0](https://github.com/binary-braids/terraform-oracle/compare/v0.7.2...v0.8.0) (2025-04-21)
+
+
+### Features
+
+* enable public IP assignment for management and k3s instances; add image source variable for k3s instance 3 ([94c3824](https://github.com/binary-braids/terraform-oracle/commit/94c3824344f2bd4fa0e566a9d2b74dd3a31b2a24))
+
+
+
 ## [0.7.2](https://github.com/binary-braids/terraform-oracle/compare/v0.7.1...v0.7.2) (2025-04-21)
 
 
@@ -93,15 +102,6 @@
 ### Features
 
 * add Network Load Balancer resources and related variables ([3fb7624](https://github.com/binary-braids/terraform-oracle/commit/3fb76245f97302f04324f5fd2b8a824d49ce8b14))
-
-
-
-# [0.3.0](https://github.com/binary-braids/terraform-oracle/compare/v0.2.0...v0.3.0) (2025-04-12)
-
-
-### Features
-
-* add support for second IPSec tunnel with wait resource ([d98dc60](https://github.com/binary-braids/terraform-oracle/commit/d98dc60955cb8e0a6684053a191b5b96a7db9118))
 
 
 
