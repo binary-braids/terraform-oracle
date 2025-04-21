@@ -12,7 +12,6 @@ resource "oci_core_instance" "linux_management_instance" {
     display_name     = "${var.mgmt_instance_display_name}-nic"
     assign_public_ip = true
     freeform_tags    = merge(local.mgmt_tags)
-
   }
 
   source_details {
@@ -23,6 +22,14 @@ resource "oci_core_instance" "linux_management_instance" {
   metadata = {
     ssh_authorized_keys = file(var.ssh_public_key)
   }
+}
+
+resource "oci_core_public_ip" "management_node_public_ip" {
+    compartment_id = var.compartment_id
+    lifetime = "Ephemeral"
+    display_name = "pip-${var.mgmt_instance_display_name}"
+    freeform_tags = merge(local.mgmt_tags)
+    private_ip_id = oci_core_private_ip.management_node_private_ip.id
 }
 
 # k3s Node 1
@@ -39,7 +46,6 @@ resource "oci_core_instance" "linux_instance_k3s_1" {
     display_name     = "${var.k3s_1_instance_display_name}-nic"
     assign_public_ip = true
     freeform_tags    = merge(local.k3s_tags)
-
   }
 
   source_details {
@@ -55,6 +61,14 @@ resource "oci_core_instance" "linux_instance_k3s_1" {
   metadata = {
     ssh_authorized_keys = file(var.ssh_public_key)
   }
+}
+
+resource "oci_core_public_ip" "linux_instance_k3s_1_public_ip" {
+    compartment_id = var.compartment_id
+    lifetime = "Ephemeral"
+    display_name = "pip-${var.k3s_1_instance_display_name}"
+    freeform_tags = merge(local.mgmt_tags)
+    private_ip_id = oci_core_private_ip.linux_instance_k3s_1_private_ip.id
 }
 
 # k3s Node 2
@@ -88,6 +102,14 @@ resource "oci_core_instance" "linux_instance_k3s_2" {
   }
 }
 
+resource "oci_core_public_ip" "linux_instance_k3s_2_public_ip" {
+    compartment_id = var.compartment_id
+    lifetime = "Ephemeral"
+    display_name = "pip-${var.k3s_2_instance_display_name}"
+    freeform_tags = merge(local.mgmt_tags)
+    private_ip_id = oci_core_private_ip.linux_instance_k3s_2_private_ip.id
+}
+
 # k3s Node 3
 resource "oci_core_instance" "linux_instance_k3s_3" {
   availability_domain = var.k3s_availability_domain
@@ -117,4 +139,12 @@ resource "oci_core_instance" "linux_instance_k3s_3" {
   metadata = {
     ssh_authorized_keys = file(var.ssh_public_key)
   }
+}
+
+resource "oci_core_public_ip" "linux_instance_k3s_3_public_ip" {
+    compartment_id = var.compartment_id
+    lifetime = "Ephemeral"
+    display_name = "pip-${var.k3s_3_instance_display_name}"
+    freeform_tags = merge(local.mgmt_tags)
+    private_ip_id = oci_core_private_ip.linux_instance_k3s_3_private_ip.id
 }
