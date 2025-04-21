@@ -5,10 +5,12 @@ on:
     branches:
     - "main"
     paths:
-    - "object_storage/**/*"
+    - "object_storage/**"
   pull_request:
+    branches:
+    - "main"
     paths:
-    - "object_storage/**/*"
+    - "object_storage/**"
   workflow_dispatch:
     
 permissions:
