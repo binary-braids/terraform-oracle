@@ -1,6 +1,9 @@
 name: Terraform Validation CI
 
 on:
+  push:
+    branches:
+    - "main"
   pull_request:
     branches:
       - main
@@ -13,6 +16,7 @@ permissions:
 jobs:
   validation:
     name: Run Validation Checks 
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
 
     steps:
@@ -41,6 +45,7 @@ jobs:
   changelog:
     name: Generate Changelog 🗒️
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
     needs:
       - validation
       
@@ -56,7 +61,6 @@ jobs:
     - name: Checkout 🔔
       uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       with:
-        ref: ${{ github.event.pull_request.head.ref }}
         token: ${{ steps.generate-token.outputs.token }}
 
     - name: Conventional Changelog Action 📋
