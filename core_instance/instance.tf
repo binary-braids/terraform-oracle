@@ -89,7 +89,7 @@ data "oci_core_vnic_attachments" "linux_instance_k3s_1_vnic_attachment" {
   ]
 }
 
-data "oci_core_private_ips" "linux_management_instance_private_ips" {
+data "oci_core_private_ips" "linux_instance_k3s_1_private_ips" {
   vnic_id  = data.oci_core_vnic_attachments.linux_instance_k3s_1_vnic_attachment.vnic_id
 
   depends_on = [
@@ -145,7 +145,7 @@ data "oci_core_vnic_attachments" "linux_instance_k3s_2_vnic_attachment" {
   ]
 }
 
-data "oci_core_private_ips" "linux_management_instance_private_ips" {
+data "oci_core_private_ips" "linux_instance_k3s_2_private_ips" {
   vnic_id  = data.oci_core_vnic_attachments.linux_instance_k3s_2_vnic_attachment.vnic_id
 
   depends_on = [
@@ -201,7 +201,7 @@ data "oci_core_vnic_attachments" "linux_instance_k3s_3_vnic_attachment" {
   ]
 }
 
-data "oci_core_private_ips" "linux_management_instance_private_ips" {
+data "oci_core_private_ips" "linux_instance_k3s_3_private_ips" {
   vnic_id  = data.oci_core_vnic_attachments.linux_instance_k3s_3_vnic_attachment.vnic_id
 
   depends_on = [
