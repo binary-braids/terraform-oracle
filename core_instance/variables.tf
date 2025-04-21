@@ -19,11 +19,6 @@ variable "shape" {
   description = "Shape for Core Instance"
 }
 
-variable "docker_instance_display_name" {
-  type        = string
-  description = "Name for Docker Core Instance"
-}
-
 variable "mgmt_instance_display_name" {
   type        = string
   description = "Name for Management Core Instance"
@@ -64,11 +59,6 @@ variable "instance_shape_config_ocpus" {
   description = "CPU for core instance"
 }
 
-variable "docker_private_ip" {
-  type        = string
-  description = "Private IP for Docker instance"
-}
-
 variable "mgmt_private_ip" {
   type        = string
   description = "Private IP for Management instance"
@@ -84,6 +74,11 @@ variable "k3s_2_instance_display_name" {
   description = "Display name for k3s instance 2"
 }
 
+variable "k3s_3_instance_display_name" {
+  type        = string
+  description = "Display name for k3s instance 3"
+}
+
 variable "k3s_1_private_ip" {
   type        = string
   description = "Private IP for k3s instance 1"
@@ -92,6 +87,11 @@ variable "k3s_1_private_ip" {
 variable "k3s_2_private_ip" {
   type        = string
   description = "Private IP for k3s instance 2"
+}
+
+variable "k3s_3_private_ip" {
+  type        = string
+  description = "Private IP for k3s instance 3"
 }
 
 variable "k3s_image_source_id" {

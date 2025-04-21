@@ -5,10 +5,12 @@ on:
     branches:
     - "main"
     paths:
-    - "core_instance/**/*"
+    - "core_instance/**"
   pull_request:
+    branches:
+    - "main"
     paths:
-    - "core_instance/**/*"
+    - "core_instance/**"
   workflow_dispatch:
     
 permissions:
