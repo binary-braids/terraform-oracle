@@ -86,25 +86,25 @@ resource "oci_core_instance" "linux_instance_k3s_2" {
   }
 }
 
-# k3s Node 3
-resource "oci_core_instance" "linux_instance_k3s_3" {
-  availability_domain = var.k3s_3_availability_domain
+# Docker Node
+resource "oci_core_instance" "linux_docker_instance" {
+  availability_domain = var.availability_domain
   compartment_id      = var.compartment_id
   shape               = var.shape
-  display_name        = var.k3s_3_instance_display_name
-  freeform_tags       = merge(local.k3s_tags)
+  display_name        = var.docker_instance_display_name
+  freeform_tags       = merge(local.docker_tags)
 
   create_vnic_details {
     subnet_id        = var.subnet_id
-    private_ip       = var.k3s_3_private_ip
-    display_name     = "${var.k3s_3_instance_display_name}-nic"
+    private_ip       = var.docker_private_ip
+    display_name     = "${var.docker_instance_display_name}-nic"
     assign_public_ip = true
-    freeform_tags    = merge(local.k3s_tags)
+    freeform_tags    = merge(local.docker_tags)
   }
 
   source_details {
     source_type = "image"
-    source_id   = var.k3s_3_image_source_id
+    source_id   = var.image_source_id
   }
 
   metadata = {

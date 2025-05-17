@@ -11,6 +11,12 @@ locals {
     createdby   = "Terraform"
   }
 
+  docker_tags = {
+    environment = var.tag_environment
+    purpose     = "Docker Node"
+    createdby   = "Terraform"
+  } 
+
   lb_tags = {
     environment = var.tag_environment
     purpose     = "Load Balancer"
