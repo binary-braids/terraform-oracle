@@ -1,3 +1,12 @@
+# [0.9.0](https://github.com/binary-braids/terraform-oracle/compare/v0.8.0...v0.9.0) (2025-05-17)
+
+
+### Features
+
+* add Docker instance configuration; replace k3s instance 3 with Docker instance ([9115c6c](https://github.com/binary-braids/terraform-oracle/commit/9115c6cb67531ea109b0a02250d673f01105abf6))
+
+
+
 # [0.8.0](https://github.com/binary-braids/terraform-oracle/compare/v0.7.2...v0.8.0) (2025-04-21)
 
 
@@ -93,15 +102,6 @@
 ### Features
 
 * update subnet_id reference and add TFE outputs for networking ([72bdb07](https://github.com/binary-braids/terraform-oracle/commit/72bdb07dce24d178adaff6ac0297a185e122cc11))
-
-
-
-# [0.4.0](https://github.com/binary-braids/terraform-oracle/compare/v0.3.0...v0.4.0) (2025-04-15)
-
-
-### Features
-
-* add Network Load Balancer resources and related variables ([3fb7624](https://github.com/binary-braids/terraform-oracle/commit/3fb76245f97302f04324f5fd2b8a824d49ce8b14))
 
 
 
