@@ -79,7 +79,7 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Cache Terraform Plan 📦
-        uses: actions/cache/save@0c907a75c2c80ebcb7f088228285e798b750cf8f # v4.2.1
+        uses: actions/cache/save@0400d5f644dc74513175e3cd8d07132dd4860809 # v4.2.4
         with:
           path: ${{ env.WORKING_DIRECTORY }}/**
           key: ${{ github.run_id }}
@@ -127,7 +127,7 @@ jobs:
           exec -l $SHELL
 
       - name: Restore Terraform Plan 🗺️
-        uses: actions/cache/restore@0c907a75c2c80ebcb7f088228285e798b750cf8f # v4.2.1
+        uses: actions/cache/restore@0400d5f644dc74513175e3cd8d07132dd4860809 # v4.2.4
         with:
           path: ${{ env.WORKING_DIRECTORY }}/**
           key: ${{ github.run_id }}
