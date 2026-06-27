@@ -94,7 +94,7 @@ jobs:
     steps:
 
       - name: Manual Approval 🚦
-        uses: trstringer/manual-approval@fc798f7f1a16a3fe344efb8678a8201e9134e4d1 # v1
+        uses: trstringer/manual-approval@fa642940caf8412403569b28b2db4a1df08a83a3 # v1
         timeout-minutes: 5
         with:
           secret: ${{ github.TOKEN }}
